@@ -1,0 +1,74 @@
+<!-- Entendeu? A propriedade parentNode acessa o elemento pai do elemento sobre o qual a propriedade é chamada. Mas ela não é a única forma de, a partir de um elemento, navegar para outros.
+Há, ao todo, as seguintes propriedades:
+
+-> parentNode: retorna o elemento pai.
+
+-> childNodes: retorna um array com todos os elementos filhos
+
+-> firstChild: retorna o primeiro filho
+
+-> lastChild: retorna o último filho
+
+-> nextSibling: retorna o próximo nó.
+
+-> reviousSibling: retorna o nó anterior.
+
+-> nextElementSibling: retorna o próximo elemento.
+
+-> previousElementSibling: retorna o elemento anterior.
+
+
+É importante dizer que, à primeira vista, as propriedades nextSibling e nextElementSibling parecem fazer a mesma coisa, mas uma pega o próximo nó do DOM, enquanto a outra pega o próximo elemento, e nem sempre o próximo nó é um elemento, como veremos abaixo.
+
+Entendeu? Então vamos praticar! Adicione o código abaixo a uma página HTML e adicione uma tag script. Você deverá fazer tudo a seguir usando somente JavaScript.
+
+Exercício:
+1 - Acesse o elemento elementoOndeVoceEsta.
+2 - Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele.
+3 - Acesse o primeiroFilhoDoFilho e adicione um texto a ele. Você se lembra dos vídeos da aula anterior, como fazer isso?
+4 - Acesse o primeiroFilho a partir de pai.
+5 - Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta.
+6 - Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta.
+7 - Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta.
+8 - Agora acesse o terceiroFilho a partir de pai. -->
+
+<!DOCTYPE html>
+
+<head>
+
+</head>
+<html>
+
+<body>
+  <div id="paiDoPai">
+    <div id="pai">
+      <div id="primeiroFilho"></div>
+      <div id="elementoOndeVoceEsta">
+        <div id="primeiroFilhoDoFilho"></div>
+        <div id="segundoEUltimoFilhoDoFilho"></div>
+      </div>
+      Atenção!
+      <div id="terceiroFilho"></div>
+      <div id="quartoEUltimoFilho"></div>
+    </div>
+  </div>
+
+  <script>
+    console.log(document.querySelector('#elementoOndeVoceEsta'));
+    document.querySelector('#elementoOndeVoceEsta').parentNode.style.color = 'red';
+    document.querySelector('#primeiroFilhoDoFilho').innerHTML = 'Este é o primeiro filho do filho';
+    console.log(document.querySelector('#pai').firstChild);
+    console.log(document.getElementById('elementoOndeVoceEsta').parentNode.firstElementChild);
+    // console.log(document.querySelector('#elementoOndeVoceEsta').parentNode.innerText);
+    console.log(document.querySelector('#elementoOndeVoceEsta').nextSibling); // acessa o próximo nó
+    console.log(document.querySelector('#elementoOndeVoceEsta').nextElementSibling); // acessa o próximo elemento.
+    console.log(document.querySelector('#pai').lastElementChild.previousElementSibling);
+    // Remova todos os elementos da página, menos pai, elementoOndeVoceEsta e primeiroFilhoDoFilho.
+    document.querySelector('#pai').removeChild(document.querySelector('#pai').firstElementChild);
+    document.querySelector('#pai').removeChild(document.querySelector('#pai').lastElementChild);
+    document.querySelector('#pai').removeChild(document.querySelector('#pai').lastElementChild);
+    document.querySelector('#elementoOndeVoceEsta').removeChild(document.querySelector('#elementoOndeVoceEsta').lastElementChild);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!-- Calculator
+Start with this webpage, which has inputs and buttons for things to calculate:
+
+Add a script tag, and add the functions from the calculator exercise (view the solution if you haven't done it yet).
+For each operation, create an event listener for the button, and when it's clicked, find the value of the appropriate input and show the result of the calculation in the solution div.
+Bonus: respond to key presses so that the user doesn't have to click the button. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8 />
+  <title>Calculator</title>
+</head>
+
+<body>
+
+  <label>Square this number:
+    <input type="number" id="square-input" size="2">
+  </label>
+  <button id="square-button">Calculate</button>
+  <br><br>
+
+  <label>Half this number:
+    <input type="number" id="half-input" size="2">
+  </label>
+  <button id="half-button">Calculate</button>
+  <br><br>
+
+  <label>
+    Fraction:
+    <input type="number" id="percent1-input" size="2">
+  </label>
+  <label>
+    Whole:
+    <input type="number" id="percent2-input" size="2">
+  </label>
+  <button id="percent-button">Calculate</button>
+  <br><br>
+
+  <label>Calculate area of circle with radius:
+    <input type="number" id="area-input" size="2">
+  </label>
+  <button id="area-button">Calculate</button>
+  <br><br>
+  <div id="solution"></div>
+
+  <script>
+    let solutionDiv = document.querySelector('#solution');
+
+    let squareField = document.querySelector('#square-input');
+    let squareBt = document.querySelector('#square-button');
+    squareBt.addEventListener('click', function() {
+      solutionDiv.innerHTML = Math.pow(squareField.value, 2);
+    });
+
+    let halfField = document.querySelector('#half-input');
+    let halfBt = document.querySelector('#half-button');
+    halfBt.addEventListener('click', function() {
+      solutionDiv.innerHTML = halfField.value / 2;
+    });
+
+    let percent1Field = document.querySelector('#percent1-input');
+    let percent2Field = document.querySelector('#percent2-input');
+    let percentBt = document.querySelector('#percent-button');
+    percentBt.addEventListener('click', function() {
+      solutionDiv.innerHTML = (percent1Field.value / percent2Field.value) * 100 + '%';
+    });
+
+    let areaField = document.querySelector('#area-input');
+    let areaBt = document.querySelector('#area-button');
+    areaBt.addEventListener('click', function() {
+      solutionDiv.innerHTML = Math.pow(areaField.value * Math.PI, 2);
+    });
+  </script>
+</body>
+
+</html>

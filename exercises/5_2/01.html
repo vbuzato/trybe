@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Exercício 5.2</title>
+  <style>
+    div {
+      border-color: black;
+      border-style: solid;
+    }
+    
+    .title {
+      text-align: center;
+    }
+    
+    .main-content {
+      background-color: yellow;
+    }
+    
+    .main-content .center-content {
+      background-color: red;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .main-content .center-content p {
+      font-style: italic;
+    }
+    
+    .main-content .left-content {
+      background-color: green;
+      width: 60%;
+      margin-left: 0;
+      margin-right: auto;
+    }
+    
+    .main-content .left-content .small-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 100%;
+    }
+    
+    .main-content .right-content {
+      background-color: blue;
+      width: 60%;
+      margin-left: auto;
+      margin-right: 0;
+    }
+    
+    .main-content .description {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    let title = document.createElement('h1');
+    title.innerHTML = 'Exercício 5.2 - JavaScript DOM ';
+    document.body.appendChild(title);
+
+    let divMain = document.createElement('div');
+    divMain.className = 'main-content';
+    document.body.appendChild(divMain);
+
+    let divCenter = document.createElement('div');
+    divCenter.className = 'center-content';
+    document.querySelector('.main-content').appendChild(divCenter);
+
+    let paragrafo = document.createElement('p');
+    paragrafo.innerHTML = 'Um texto qualquer';
+    document.querySelector('.center-content').appendChild(paragrafo);
+
+    let divLeft = document.createElement('div');
+    divLeft.className = 'left-content';
+    document.querySelector('.main-content').appendChild(divLeft);
+
+    let divRight = document.createElement('div');
+    divRight.className = 'right-content';
+    document.querySelector('.main-content').appendChild(divRight);
+
+    let img = document.createElement('img');
+    img.className = 'small-image';
+    img.src = 'https://picsum.photos/200';
+    document.querySelector('.left-content').appendChild(img);
+
+    let listStruc = document.createElement('ul');
+    document.querySelector('.right-content').appendChild(listStruc);
+    for (let i = 1; i < 11; i += 1) {
+      let listItem = document.createElement('li');
+      listItem.innerHTML = i;
+      document.querySelector('.right-content').firstElementChild.appendChild(listItem);
+    }
+
+    for (let i = 0; i < 3; i += 1) {
+      let h3Tag = document.createElement('h3');
+      document.querySelector('.main-content').appendChild(h3Tag);
+    }
+
+    //Agora que você criou muita coisa, vamos fazer algumas alterações e remoções:
+
+    title.className = 'title';
+
+    let h3Tags = document.querySelectorAll('h3');
+    for (let i = 0; i < h3Tags.length; i += 1) {
+      h3Tags[i].className = 'description';
+    }
+
+    let divToDel = document.querySelector('.left-content');
+    document.querySelector('.main-content').removeChild(divToDel);
+
+    divRight.style.marginRight = 'auto';
+
+    divCenter.style.backgroundColor = 'green';
+
+    for (let i = 0; i < 2; i += 1) {
+      let listAllLi = document.querySelector('ul').lastElementChild;
+      document.querySelector('ul').removeChild(listAllLi);
+    }
+  </script>
+</body>
+
+</html>
