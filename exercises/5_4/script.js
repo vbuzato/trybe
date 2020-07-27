@@ -5,26 +5,31 @@
 if (localStorage.getItem('bgcolor') !== null) {
   let bodyBg = document.getElementsByTagName('body')[0];
   bodyBg.style.backgroundColor = localStorage.getItem('bgcolor');
+  document.getElementById('chosen-bg-color').value = localStorage.getItem('bgcolor'); // Carrega no campo, o último valor selecionado 
 }
 
 if (localStorage.getItem('fontcolor') !== null) {
   let article = document.getElementsByTagName('article')[0];
   article.style.color = localStorage.getItem('fontcolor');
+  document.getElementById('chosen-font-color').value = localStorage.getItem('fontcolor');
 }
 
 if (localStorage.getItem('fontsize') !== null) {
   let article = document.getElementsByTagName('article')[0];
   article.style.fontSize = localStorage.getItem('fontsize');
+  document.getElementById('chosen-font-size').value = localStorage.getItem('fontsize');
 }
 
 if (localStorage.getItem('linespacing') !== null) {
   let article = document.getElementsByTagName('article')[0];
   article.style.lineHeight = localStorage.getItem('linespacing');
+  document.getElementById('chosen-line-spacing').value = localStorage.getItem('linespacing');
 }
 
 if (localStorage.getItem('fontfamily') !== null) {
   let article = document.getElementsByTagName('article')[0];
   article.style.fontFamily = localStorage.getItem('fontfamily');
+  document.getElementById('chosen-font-family').value = localStorage.getItem('fontfamily');
 }
 
 
@@ -63,4 +68,12 @@ chosenFontFamily.addEventListener('change', function() {
   let article = document.getElementsByTagName('article')[0];
   article.style.fontFamily = chosenFontFamily.value;
   localStorage.setItem('fontfamily', chosenFontFamily.value);
+});
+
+document.getElementById('link-menu').addEventListener('click', function() {
+  if (document.getElementById('customize-page').style.display === 'none' || document.getElementById('customize-page').style.display === '') {
+    document.getElementById('customize-page').style.display = 'flex';
+  } else if (document.getElementById('customize-page').style.display === 'flex') {
+    document.getElementById('customize-page').style.display = 'none';
+  }
 });

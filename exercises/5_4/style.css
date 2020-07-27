@@ -1,5 +1,5 @@
 #customize-page {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   background-color: rgb(95, 115, 134);
   color: aliceblue;
@@ -10,4 +10,21 @@
 
 .box {
   width: 150px;
+}
+
+#bt-menu {
+  margin: 10px;
+  float: left;
+}
+
+#link-menu {
+  background-color: azure;
+  width: 100%;
+  height: 60px;
+  border-radius: 15px;
+}
+
+.desc-menu {
+  float: left;
+  margin: 25px 0 0 10px;
 }
