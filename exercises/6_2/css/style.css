@@ -1,0 +1,14 @@
+html {
+  background: url("../imgs/bg.jpg") top right no-repeat;
+  background-size: 50%;
+}
+
+body {
+  width: 80%;
+  margin: auto;
+  padding: 50px;
+}
+
+fieldset {
+  padding: 50px;
+}
