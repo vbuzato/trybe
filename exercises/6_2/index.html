@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js" defer></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <form>
+    <fieldset>
+      <legend><strong>Dados Pessoais</strong></legend>
+
+      <label for="name">Nome:</label>
+      <input type="text" name="name" id="name" required="required" maxlength="40">
+
+      <label for="email">E-mail:</label>
+      <input type="text" name="email" id="email" required="required" maxlength="50">
+
+      <label for="cpf">CPF:</label>
+      <input type="text" name="cpf" id="cpf" required="required" maxlength="11">
+
+      <label for="address">Endereço:</label>
+      <input type="text" name="address" id="address" required="required" maxlength="200">
+
+      <label for="city">Cidade:</label>
+      <input type="text" name="city" id="city" required="required" maxlength="28">
+
+      <label for="state">Estado:</label>
+      <select type="text" name="state" id="state" required="required" maxlength="28"></select>
+
+
+      <label for="house"><input type="radio" name="type" id="house" value="house" required="required">Casa</l   <label for="apartment"><input type="radio" name="type" id="apartment" value="apartment" required="required">Apartamento</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend><strong>Sobre seu último emprego</strong></legend>
+
+      <label for="resume">Resumo do currículo:</label>
+      <textarea name="resume" id="resume" cols="30" rows="10" maxlength="1000" required="required"></textarea>
+
+      <label for="role">Cargo:</label>
+      <input type="text" name="role" id="role" required="required" maxlength="40">
+
+      <label for="role-description">Descrição do cargo:</label>
+      <textarea type="text" name="role-description" id="role-description" required="required" maxlength="500"></textarea>
+
+      <label for="start-date">Data de início:</label>
+      <input type="date" name="start-date" id="start-date" maxlength="10" required>
+
+      <button type="submit" id="bt-send">Enviar</button>
+      <button type="button" id="bt-clear">Limpar</button>
+    </fieldset>
+  </form>
+</body>
+
+</html>
