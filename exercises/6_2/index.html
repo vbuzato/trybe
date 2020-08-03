@@ -4,19 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="script.js" defer></script>
+  <script src="js/script.js" defer></script>
   <link href="css/bulma.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
   <title>Document</title>
 </head>
 
 <body>
-  <header>
-    <h1>Cadastre-se</h1>
-    <h2>Envie seus dados e aguarde nosso contato.</h2>
+  <header class="section">
+    <h1 class="title has-text-centered">Cadastre-se</h1>
+    <h2 class="subtitle has-text-centered">Envie seus dados e aguarde nosso contato.</h2>
   </header>
   <form>
     <fieldset>
-      <legend><strong>Dados Pessoais</strong></legend>
+      <legend class="subtitle has-text-centered"><strong>Dados Pessoais</strong></legend>
 
       <div class="field">
         <label class="label" for="name">Nome:</label>
@@ -52,21 +55,21 @@
         <label class="label" for="state">Estado:</label>
         <select class="select is-medium" type="text" name="state" id="state" required="required" maxlength="28"></select>
       </div>
-
       <div class="field">
         <div class="control">
           <label class="label" for="house">
-            <input class="radio" type="radio" name="type" id="house" value="house" required="required">
+            <input class="radio" type="radio" name="type" id="house" value="house" checked required>
             Casa
           </label>
           <label class="label" for="apartment">
-            <input class="radio" type="radio" name="type" id="apartment" value="apartment" required="required">
+            <input class="radio" type="radio" name="type" id="apartment" value="apartment" required>
             Apartamento
           </label>
         </div>
+      </div>
     </fieldset>
     <fieldset>
-      <legend>Sobre seu último emprego</legend>
+      <legend class="subtitle has-text-centered"><strong>Sobre seu último emprego</strong></legend>
 
       <div class="field">
         <label class="label" for="resume">Resumo do currículo:</label>
@@ -81,19 +84,27 @@
       </div>
       <div class="field">
         <label class="label" for="role-description">Descrição do cargo:</label>
-        <textarea type="text" name="role-description" id="role-description" required="required" maxlength="500"></textarea>
+        <textarea class="textarea" type="text" name="role-description" id="role-description" required="required" maxlength="500"></textarea>
       </div>
       <div class="field">
         <label class="label" for="start-date">Data de início:</label>
         <div class="control">
-          <input class="input" type="date" name="start-date" id="start-date" maxlength="10" required>
+          <input class="input" type="text" name="start-date" id="start-date" maxlength="10" required>
         </div>
       </div>
-      <button class="btn" type="submit" id="bt-send">Enviar</button>
-      <button class="btn" type="button" id="bt-clear">Limpar</button>
+      <button class="button is-success is-outlined" type="submit" id="bt-send">Enviar</button>
+      <button class="button is-danger is-outlined" type="button" id="bt-clear">Limpar</button>
 
     </fieldset>
   </form>
+  <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+  <script>
+    var picker = new Pikaday({
+      field: document.getElementById('start-date')
+    });
+
+  </script>
 </body>
 
 </html>
