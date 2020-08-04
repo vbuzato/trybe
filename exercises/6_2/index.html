@@ -7,7 +7,6 @@
   <script src="js/script.js" defer></script>
   <link href="css/bulma.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
   <title>Document</title>
 </head>
@@ -17,20 +16,20 @@
     <h1 class="title has-text-centered">Cadastre-se</h1>
     <h2 class="subtitle has-text-centered">Envie seus dados e aguarde nosso contato.</h2>
   </header>
-  <form>
+  <form action="#" method="GET">
     <fieldset>
       <legend class="subtitle has-text-centered"><strong>Dados Pessoais</strong></legend>
 
       <div class="field">
         <label class="label" for="name">Nome:</label>
         <div class="control">
-          <input class="input" type="text" name="name" id="name" required="required" maxlength="40">
+          <input class="input" type="text" name="name" id="name" minLength="3" maxlength="40" required>
         </div>
       </div>
       <div class="field">
         <label class="label" for="email">E-mail:</label>
         <div class="control">
-          <input class="input" type="text" name="email" id="email" required="required" maxlength="50">
+          <input class="input" type="email" name="email" id="email" maxlength="50" required>
         </div>
       </div>
       <div class="field">

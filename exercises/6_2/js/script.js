@@ -14,7 +14,7 @@ form.appendChild(data);
 
 const btSend = document.getElementById('bt-send');
 btSend.addEventListener('click', function (e) {
-  e.preventDefault();
+  // e.preventDefault();
 
   let formData = {};
   const names = ['name', 'email', 'cpf', 'address', 'city', 'state', 'type', 'resume', 'role', 'role-description', 'start-date'];
