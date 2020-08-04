@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/script.js" defer></script>
+  <link href="css/bulma.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <header class="section">
+    <h1 class="title has-text-centered">Cadastre-se</h1>
+    <h2 class="subtitle has-text-centered">Envie seus dados e aguarde nosso contato.</h2>
+  </header>
+  <form action="#" method="GET">
+    <fieldset>
+      <legend class="subtitle has-text-centered"><strong>Dados Pessoais</strong></legend>
+
+      <div class="field">
+        <label class="label" for="name">Nome:</label>
+        <div class="control">
+          <input class="input" type="text" name="name" id="name" minLength="3" maxlength="40" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="email">E-mail:</label>
+        <div class="control">
+          <input class="input" type="email" name="email" id="email" maxlength="50" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="cpf">CPF:</label>
+        <div class="control">
+          <input class="input" type="text" name="cpf" id="cpf" required="required" maxlength="11">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="address">Endereço:</label>
+        <div class="control">
+          <input class="input" type="text" name="address" id="address" required="required" maxlength="200">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="city">Cidade:</label>
+        <div class="control">
+          <input class="input" type="text" name="city" id="city" required="required" maxlength="28">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="state">Estado:</label>
+        <select class="select is-medium" type="text" name="state" id="state" required="required" maxlength="28"></select>
+      </div>
+      <div class="field">
+        <div class="control">
+          <label class="label" for="house">
+            <input class="radio" type="radio" name="type" id="house" value="house" checked required>
+            Casa
+          </label>
+          <label class="label" for="apartment">
+            <input class="radio" type="radio" name="type" id="apartment" value="apartment" required>
+            Apartamento
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend class="subtitle has-text-centered"><strong>Sobre seu último emprego</strong></legend>
+
+      <div class="field">
+        <label class="label" for="resume">Resumo do currículo:</label>
+        <textarea class="textarea" name="resume" id="resume" cols="30" rows="10" maxlength="1000" required="required"></textarea>
+        <p class="content">Faça um breve resumo da sua experiência.</p>
+      </div>
+      <div class="field">
+        <label class="label" for="role">Cargo:</label>
+        <div class="control">
+          <input class="input" type="text" name="role" id="role" required="required" maxlength="40">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="role-description">Descrição do cargo:</label>
+        <textarea class="textarea" type="text" name="role-description" id="role-description" required="required" maxlength="500"></textarea>
+      </div>
+      <div class="field">
+        <label class="label" for="start-date">Data de início:</label>
+        <div class="control">
+          <input class="input" type="text" name="start-date" id="start-date" maxlength="10" required>
+        </div>
+      </div>
+      <button class="button is-success is-outlined" type="submit" id="bt-send">Enviar</button>
+      <button class="button is-danger is-outlined" type="button" id="bt-clear">Limpar</button>
+
+    </fieldset>
+  </form>
+  <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+  <script>
+    var picker = new Pikaday({
+      field: document.getElementById('start-date')
+    });
+
+  </script>
+</body>
+
+</html>
