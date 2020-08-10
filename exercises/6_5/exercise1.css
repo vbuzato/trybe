@@ -1,0 +1,57 @@
+body {
+    font-size: 1.2rem;
+    padding: 5%;
+}
+h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 1.6rem;
+}
+h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+figure {
+    margin: 40px 0;
+}
+
+.container {
+    max-width: 1400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+p {
+    max-width:1000px;
+}
+
+
+@media screen and (min-width:1024px) {
+    .container {
+        justify-content: space-around;
+    }
+
+    body {
+        font-size: 1rem;
+        padding: 0 10%;
+        background-color: azure;
+    }
+}
+
+@media screen and (min-width:1300px) {
+    .container {
+        justify-content: space-around;
+    }
+    
+    body {
+        font-size: 1rem;
+        padding: 0 14%;
+        background-color: blue;
+    }
+}

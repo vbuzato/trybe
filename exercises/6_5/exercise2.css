@@ -1,0 +1,116 @@
+html {
+    box-sizing: border-box;
+  }
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body{
+  font-size: 1.2rem;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100%;
+}
+
+header {  
+  padding: 20px;  
+  background-color: azure;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.asides{
+  background-color: teal;
+  color: azure;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.aside-one, .aside-two {
+  padding: 10%;
+}
+
+h1, h2 {
+  padding: 10px 0;
+}
+header p {
+  color: darkslategrey;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  color: slategray;
+  margin-left: 10px;
+  list-style: none;
+}
+
+footer {
+ background-color: slategrey;
+ color: rgb(12, 20, 20);
+ padding: 20px;
+ display: flex;
+ flex-direction: column;
+}
+
+footer h3, footer p {
+  align-self: center;
+  padding: 5px 0;
+}
+.main-content{
+  padding: 5%;
+}
+
+@media screen and (min-width:520px){
+  header {  
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width:768px){
+  .asides{
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .aside-one, .aside-two {
+    padding: 30px;
+  }
+}
+
+@media screen and (min-width:1200px){
+  .asides{
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: flex-end ;
+    width: 25%;
+  }
+  .aside-one, .aside-two {
+    padding: 30px;
+  }
+  header {  
+    justify-content: space-around;
+  }
+  .container {
+    display: flex;
+  }
+  .main-content{
+    padding: 3% 5%;
+    width: 75%;
+  }
+  .content-wrap{
+    margin: auto;
+    width: 1200px;
+  }
+}
+
