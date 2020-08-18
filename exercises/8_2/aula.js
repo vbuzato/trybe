@@ -12,7 +12,7 @@ console.log(paresMenoresQueCinco); // Retorno: [2, 4]
 
 // ------------------------------------------------/
 
-const allNameStudents = estudantes.filter((estudante) => (
-  estudante.turno === 'Manhã')).map((estudante) => `${estudante.nome} ${estudante.sobrenome}`);
+// const allNameStudents = estudantes.filter((estudante) => (
+//   estudante.turno === 'Manhã')).map((estudante) => `${estudante.nome} ${estudante.sobrenome}`);
 
-console.log(allNameStudents);
+// console.log(allNameStudents);
