@@ -67,7 +67,7 @@ const books = [{
 const expected_result = 'O Senhor dos Anéis';
 
 const checkName = (name) => {
-  const qtLettters = name.split('.') //.filter(letter => letter === '.');
+  const qtLettters = name.split('.');
   return qtLettters.length === 4 ? true : false;
 };
 
