@@ -1,5 +1,4 @@
-// Crie uma string com os nomes de todas as pessoas autoras.
-
+// Encontre o livro com o maior nome.
 
 const assert = require('assert');
 
@@ -36,7 +35,6 @@ const books = [{
   {
     id: 4,
     name: 'Duna',
-    genre: 'Ficção Científica',
     author: {
       name: 'Frank Herbert',
       birthYear: 1920,
@@ -65,11 +63,20 @@ const books = [{
   },
 ];
 
-function allNames() {
-  return books.reduce((acc, curValue) => `${acc} ${curValue.author.name},`, 'Nomes:').replace(/.$/, ".");
-  // .$ will match any character at the end of a string.;-> https://stackoverflow.com/questions/36630230/replace-last-character-of-string-using-javascript/36630513
-}
+const expected_result = {
+  author: {
+    birthYear: 1948,
+    name: 'George R. R. Martin'
+  },
+  genre: 'Fantasia',
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  releaseYear: 1991
+};
 
-console.log(allNames());
+function longestNamedBook() {
+  return books.reduce((acc, book) => (acc.name.length > book.name.length) ? acc : book);
+};
+console.log(longestNamedBook());
 
-assert.deepEqual(allNames(), "Nomes: George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.");
+assert.deepEqual(longestNamedBook(), expected_result);

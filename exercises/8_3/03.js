@@ -1,5 +1,4 @@
-// Crie uma string com os nomes de todas as pessoas autoras.
-
+// Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
 
 const assert = require('assert');
 
@@ -65,11 +64,13 @@ const books = [{
   },
 ];
 
-function allNames() {
-  return books.reduce((acc, curValue) => `${acc} ${curValue.author.name},`, 'Nomes:').replace(/.$/, ".");
-  // .$ will match any character at the end of a string.;-> https://stackoverflow.com/questions/36630230/replace-last-character-of-string-using-javascript/36630513
+const expected_result = 43;
+
+function averageAge() {
+  const resultBook = books.reduce((acc, book) => acc + (book.releaseYear - book.author.birthYear), 0);
+  return resultBook / books.length;
 }
 
-console.log(allNames());
+console.log(averageAge());
 
-assert.deepEqual(allNames(), "Nomes: George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.");
+assert.equal(averageAge(), expected_result);
