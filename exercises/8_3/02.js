@@ -1,4 +1,5 @@
-// Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais (terminam com um ponto).
+// Crie uma string com os nomes de todas as pessoas autoras.
+
 
 const assert = require('assert');
 
@@ -64,19 +65,11 @@ const books = [{
   },
 ];
 
-const expected_result = 'O Senhor dos Anéis';
-
-const checkName = (name) => {
-  const qtLettters = name.split('.');
-  return qtLettters.length === 4 ? true : false;
-};
-
-function authorWith3DotsOnName() {
-  // escreva seu código aqui
-  const choicedBook = books.find(book => checkName(book.author.name));
-  return choicedBook.name;
+function allNames() {
+  return books.reduce((acc, curValue) => `${acc} ${curValue.author.name},`, 'Nomes:').replace(/.$/, ".");
+  // .$ will match any character at the end of a string.;-> https://stackoverflow.com/questions/36630230/replace-last-character-of-string-using-javascript/36630513
 }
 
-console.log(authorWith3DotsOnName());
+console.log(allNames());
 
-assert.deepEqual(authorWith3DotsOnName(), expected_result);
+assert.deepEqual(allNames(), "Nomes: George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.");
