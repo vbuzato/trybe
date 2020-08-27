@@ -15,14 +15,11 @@ const handleError = (errorReason) => console.log(`Error getting temperature: ${e
 
 // definição da função sendMarsTemperature...
 const sendMarsTemperature = (callback, error) => {
+  const temp = getMarsTemperature();
+  const didOperationSucceed = Math.random() >= 0.6;
   setTimeout(() => {
-    const temp = getMarsTemperature();
-    const didOperationSucceed = Math.random() >= 0.5;
-    if (didOperationSucceed) {
-      callback(temp);
-    } else {
-      error('Robot is busy');
-    }
+    if (didOperationSucceed) callback(temp)
+    else error('Robot is busy');
   }, messageDelay());
 }
 
