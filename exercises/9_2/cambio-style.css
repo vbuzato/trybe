@@ -1,0 +1,36 @@
+
+body {
+  background-image: url('https://meiaum.digital/wp-content/uploads/2019/02/bg-branco.jpg');
+  background-position: top center;
+  background-repeat: repeat-y;
+  min-height: 100vh;
+  padding-top: 20px;
+}
+
+.content-wrap {
+  margin: auto;
+  text-align: center;
+  width: 30%;
+}
+
+input {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.rates {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.child_rate {
+  background-color: #f6fdff;
+  border: 1px solid #63a5aa;
+  border-radius: 5px;
+  margin: 5px;
+  text-align: center;
+  padding: 20px;
+  width: 220px;
+}
