@@ -1,5 +1,7 @@
 const uppercase = (str, callback) => {
-  callback(str.toUpperCase());
-}
+  setTimeout(() => {
+    callback(str.toUpperCase())
+  }, 3000);
+};
 
 module.exports = uppercase;
