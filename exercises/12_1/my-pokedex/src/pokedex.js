@@ -7,29 +7,44 @@ class Pokedex extends Component {
   constructor() {
     super();
 
-    this.nextPokemon = this.nextPokemon.bind(this)
+    this.nextPokemon = this.nextPokemon.bind(this);
+    this.filterPoke = this.filterPoke.bind(this);
 
     this.state = {
-      index: 0
-    }
+      index: 0,
+      type: 'All'
+    };
   }
-
-  nextPokemon() {
+  
+  nextPokemon(filteredPokemons) {
     this.setState((previousState) => ({
-      index: (previousState.index < pokemons.length - 1) ? previousState.index + 1 : 0
+      index: (previousState.index < filteredPokemons.length - 1) ? previousState.index + 1 : 0
     }));
   }
-
+  
+  filterPoke(type) {
+    this.setState((previousState) => ({
+      index: 0,
+      type: type
+    }));
+  }
+  
   render() {
+    const filteredPokemons = ((this.state.type === 'All') ? pokemons
+      : pokemons.filter((pokemon) => this.state.type === pokemon.type));
+      
     return (
       <div className='pokedex-list'>
-        <Pokemon key={pokemons[this.state.index].id} pokemon={pokemons[this.state.index]} />
-        <button onClick={this.nextPokemon}>next</button>
+        <Pokemon key={filteredPokemons[this.state.index].id} pokemon={filteredPokemons[this.state.index]} />
+        <div>
+          <button onClick={() => this.filterPoke('All')}>All</button>
+          <button onClick={() => this.filterPoke('Fire')}>Fire</button>
+          <button onClick={() => this.filterPoke('Psychic')}>Psychic</button>
+        </div>
+        <button onClick={() => this.nextPokemon(filteredPokemons)}>next</button>
       </div>
     );
   }
 }
 
 export default Pokedex;
-
-{/* {this.props.pokemons.map((pokemon) => <Pokemon key={pokemon.id} pokemon={pokemon} /> )} */}
