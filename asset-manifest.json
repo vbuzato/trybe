@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/projects/dog-image/static/css/main.c8d1e04a.chunk.css",
+    "main.js": "/projects/dog-image/static/js/main.7b4bcd28.chunk.js",
+    "main.js.map": "/projects/dog-image/static/js/main.7b4bcd28.chunk.js.map",
+    "runtime-main.js": "/projects/dog-image/static/js/runtime-main.6c595232.js",
+    "runtime-main.js.map": "/projects/dog-image/static/js/runtime-main.6c595232.js.map",
+    "static/js/2.b337f136.chunk.js": "/projects/dog-image/static/js/2.b337f136.chunk.js",
+    "static/js/2.b337f136.chunk.js.map": "/projects/dog-image/static/js/2.b337f136.chunk.js.map",
+    "index.html": "/projects/dog-image/index.html",
+    "precache-manifest.e1490645c6eccfb9817e5f856f541846.js": "/projects/dog-image/precache-manifest.e1490645c6eccfb9817e5f856f541846.js",
+    "service-worker.js": "/projects/dog-image/service-worker.js",
+    "static/css/main.c8d1e04a.chunk.css.map": "/projects/dog-image/static/css/main.c8d1e04a.chunk.css.map",
+    "static/js/2.b337f136.chunk.js.LICENSE.txt": "/projects/dog-image/static/js/2.b337f136.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6c595232.js",
+    "static/js/2.b337f136.chunk.js",
+    "static/css/main.c8d1e04a.chunk.css",
+    "static/js/main.7b4bcd28.chunk.js"
+  ]
+}
