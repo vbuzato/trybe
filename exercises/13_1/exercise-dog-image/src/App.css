@@ -1,3 +1,10 @@
+.app {
+  background-color: #dae0e4;
+  color: rgb(9, 53, 53);
+  padding: 20px;
+  height: 100vh;
+}
+
 .dogInfo {
   display: flex;
   flex-wrap: wrap;
@@ -7,4 +14,8 @@
 
 .breed {
   padding: 10px 0;
+}
+
+.imageDog {
+  border: 8px solid white;
 }

@@ -39,7 +39,7 @@ class Dogs extends React.Component {
       <article className="dogInfo">
         <button type="button" onClick={this.fetchImageDogs}>Trocar de foto</button>
         <span className="breed">Raça: {breed}</span>
-        {(dogImagePath) ? <img src={dogImagePath} alt="" width="300px" /> : 'Loading...'}
+        {(dogImagePath) ? <img src={dogImagePath} alt="" className="imageDog" width="300px" /> : 'Loading...'}
       </article>
     );
   }
