@@ -1,0 +1,10 @@
+.dogInfo {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.breed {
+  padding: 10px 0;
+}
