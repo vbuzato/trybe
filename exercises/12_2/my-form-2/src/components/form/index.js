@@ -78,8 +78,10 @@ class Form extends React.Component {
           handleChange={this.handleChange} 
           value={this.state} 
         />
-        <button type="button" onClick={this.showData}>Ver dados</button>
-        <button type="button" onClick={this.deleteData}>Limpar</button>
+        <div className="buttons">
+          <button type="button" onClick={this.showData}>Ver dados</button>
+          <button type="button" onClick={this.deleteData}>Limpar</button>
+        </div>
         <div className="result"></div>
       </form>
     );
