@@ -1,0 +1,36 @@
+.dataField, form {
+  display: flex;
+}
+
+form {
+  align-items: center;
+  flex-wrap: wrap;
+  width: 432px;
+}
+
+fieldset {
+  border-radius: 5px;
+  margin-top: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+fieldset label {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  width: 400px;
+}
+fieldset input, fieldset textarea, fieldset select {
+  border: 1px solid rgb(101, 133, 160);
+  border-radius: 3px;
+  color: rgb(78, 78, 78);
+  margin-left:10px;
+  padding: 5px;
+  width: 200px;
+}
+
+.buttons {
+  width: 100%;
+  text-align: center;
+}
