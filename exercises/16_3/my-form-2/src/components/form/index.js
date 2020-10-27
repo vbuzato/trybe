@@ -2,35 +2,16 @@ import React from 'react'
 import './style.css'
 import PersonalDataField from './personalDataField'
 import LastJobInfo from './lastJobInfo'
+import { connect } from 'react-redux'
+import { stateClean } from '../actions'
 
 class Form extends React.Component {
   constructor() {
     super()
 
-    this.handleChange = this.handleChange.bind(this)
-    this.checkNameCity = this.checkNameCity.bind(this)
-    this.showData = this.showData.bind(this)
-    this.deleteData = this.deleteData.bind(this)
-
-    this.state = {
-      name: "",
-      email: "",
-      cpf: "",
-      address: "",
-      city: "",
-      state: "",
-      resume: "",
-      hole: "",
-      jobdescription: "",
-    }
-  }
-
-  checkNameCity(city) {
-    if (city.match(/^[0-9]/)) {
-      this.setState({ 
-        city: "" 
-      });
-    }
+    this.handleChange = this.handleChange.bind(this);
+    this.showData = this.showData.bind(this);
+    this.deleteData = this.deleteData.bind(this);
   }
 
   handleChange(event) {
@@ -41,45 +22,31 @@ class Form extends React.Component {
     });
   }
 
-  showData(){
-    let data = JSON.stringify(this.state);
+  showData(state){
+    let data = JSON.stringify(state.addToState);
     data = data
       .replace('{', '')
       .replace('}', '')
       .replace(/"/g, '')
       .replace(/,/g, '<br />')
+      .replace(/:/g, ': ')
     document.querySelector('.result').innerHTML = data;
   }
 
   deleteData() {
+    const { deleteAll } = this.props;
     document.querySelector('.result').innerHTML = '';
-    this.setState({
-      name: "",
-      email: "",
-      cpf: "",
-      address: "",
-      city: "",
-      state: "",
-      resume: "",
-      hole: "",
-      jobdescription: "",
-    })
+    deleteAll();
   }
 
   render() {
+    const { state } = this.props;
     return (
       <form>
-        <PersonalDataField 
-          checkNameCity={this.checkNameCity}
-          handleChange={this.handleChange} 
-          value={this.state}
-        />
-        <LastJobInfo 
-          handleChange={this.handleChange} 
-          value={this.state} 
-        />
+        <PersonalDataField />
+        <LastJobInfo />
         <div className="buttons">
-          <button type="button" onClick={this.showData}>Ver dados</button>
+          <button type="button" onClick={() => this.showData(state)}>Ver dados</button>
           <button type="button" onClick={this.deleteData}>Limpar</button>
         </div>
         <div className="result"></div>
@@ -88,4 +55,12 @@ class Form extends React.Component {
   }
 }
 
-export default Form;
+const mapStateToProps = (state) => ({
+  state,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  deleteAll: () => dispatch(stateClean())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);

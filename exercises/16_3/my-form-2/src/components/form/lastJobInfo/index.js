@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
+import { addData } from '../../actions';
 
 class LastJobInfo extends  React.Component {
   constructor() {
@@ -18,25 +20,35 @@ class LastJobInfo extends  React.Component {
   }
 
   render() {
-    const { handleChange, value } = this.props;
+    const { add, resume, hole, jobdescription } = this.props;
     
     return (
       <fieldset className="dataField">
         <label>
           Resumo do currículo:
-          <textarea name="resume" type="textarea" maxLength="1000" onChange={handleChange} value={value.resume} required />
+          <textarea name="resume" type="textarea" maxLength="1000" onChange={({ target }) => add(target.name, target.value)} value={resume} required />
         </label>
         <label>
           Cargo:
-          <textarea name="hole" type="textarea" maxLength="50" onChange={handleChange} value={value.hole} onMouseEnter={this.warning} required />
+          <textarea name="hole" type="textarea" maxLength="50" onChange={({ target }) => add(target.name, target.value)} value={hole} onMouseEnter={this.warning} required />
         </label>
         <label>
           Descrição do cargo:
-          <input name="jobdescription" type="text" maxLength="500" onChange={handleChange} value={value.jobdescription} required />
+          <input name="jobdescription" type="text" maxLength="500" onChange={({ target }) => add(target.name, target.value)} value={jobdescription} required />
         </label>
       </fieldset>
     )
   }
 }
 
-export default LastJobInfo;
+const mapStateToProps = (state) => ({
+  resume: state.addToState.resume,
+  hole: state.addToState.hole,
+  jobdescription: state.addToState.jobdescription,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  add: (name, value) => dispatch(addData(name, value))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LastJobInfo);
